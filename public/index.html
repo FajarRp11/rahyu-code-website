@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rahyu Code</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- TAILWINDCSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- ALPINE JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+  </head>
+  <body>
+    <header class="fixed top-0 left-0 right-0 w-full z-50" x-data="{open: false}">
+      <div
+        class="container mx-auto flex justify-between md:justify-center items-center"
+      >
+        <div class="w-full block md:hidden">
+          <div class="flex px-4 py-2">
+            <div
+              class="w-10 h-8 mr-2 flex justify-center items-center bg-slate-100/60 rounded-xl backdrop-blur border border-darkColor/50 "
+              id="nav-toggle order-2"
+              @click = "open = !open"
+            >
+              <img
+                src="./assets/img/icon/menu.svg"
+                alt="nav-toggle"
+                class="block md:hidden w-4 object-cover object-center cursor-pointer"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="navbar-sm px-4 py-2 text-sm font-semibold text-darkColor bg-slate-100/60 rounded-xl backdrop-blur ease-in-out duration-200 w-full border border-darkColor/50 order-1"
+              id="navbar-sm"
+              x-show="open"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 scale-90"
+              x-transition:enter-end="opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-300"
+              x-transition:leave-start="opacity-100 scale-100"
+              x-transition:leave-end="opacity-0 scale-90"
+            >
+              <nav class="flex flex-col gap-4 pb-2">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <nav
+          class="navbar-lg hidden text-darkColor md:block px-4 bg-slate-100/60 rounded-3xl backdrop-blur mt-2 border border-darkColor/50"
+          id="navbar-lg"
+        >
+          <div class="px-4 py-2 gap-6 flex font-semibold text-sm">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section
+      id="home"
+      class="min-h-screen bg-cover bg-center"
+      style="background-image: url(./assets/img/homebg.jpg)"
+    >
+      <div
+        class="min-h-screen h-full bg-gradient-to-r from-bgColor to-bgColor flex flex-col justify-center gap-8 px-6 items-center text-lightColor"
+      >
+        <h1
+          class="font-semibold text-3xl text-center md:text-5xl md:text-center md:max-w-3xl"
+        >
+          Transform Your Digital Landscape
+        </h1>
+        <p class="text-center text-base max-w-80 md:text-center md:max-w-xl">
+          At Rahyu Code, we craft innovative software solutions that drive
+          business success. Empower your digital journey with us.
+        </p>
+        <a
+          href=""
+          class="px-8 py-2 rounded-md text-lightColor bg-transparent tracking-widest hover:text-darkColor hover:bg-lightColor border border-lightColor ease-in-out duration-300 cursor-pointer"
+        >
+          Explore Now
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="bg-lightColor text-darkColor min-h-fit">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-12 px-4 py-4 md:py-8 gap-4">
+          <div
+            class="col-span-12 md:col-span-6 md:px-4 flex flex-col md:justify-center"
+            x-data = "{aboutOpen: false}"
+          >
+            <h1 class="text-2xl md:text-4xl font-semibold">About Us</h1>
+            <p class="my-4">
+              Rahyu Code is a leading software development company based in
+              Padang, Kota Padang, Sumatera Barat, Indonesia. We specialize in
+              creating innovative solutions to help businesses thrive in the
+              digital world.
+            </p>
+            <p  id="about-below" 
+                class="mb-4" 
+                x-show="aboutOpen"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-90"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90">
+                Our team of skilled developers is dedicated to delivering
+                high-quality software products tailored to meet the unique needs
+              of our clients. At Rahyu Code, we are committed to excellence and
+              customer satisfaction.
+            </p>
+            <button
+              class="px-8 py-2 w-fit rounded-md bg-transparent text-darkColor tracking-widest hover:text-lightColor hover:bg-darkColor border border-darkColor ease-in-out duration-300 cursor-pointer"
+              id="about-btn"
+              @click= "aboutOpen = !aboutOpen"
+            >
+              Read More
+            </button>
+          </div>
+          <div class="col-span-12 md:col-span-6 md:pl-8 md:pr-4 md:py-4">
+            <img
+              src="./assets/img/aboutimg.jpg"
+              alt="About Image"
+              loading="lazy"
+              class="object-center object-cover w-full rounded-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-darkColor text-lightColor">
+      <div class="container mx-auto px-8 py-4 md:py-12">
+        <h1 class="text-2xl md:text-4xl font-bold mb-4 text-center">
+          What We Do?
+        </h1>
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 md:col-span-4">
+            <img
+              src="./assets/img/service1.jpg"
+              alt="service1"
+              class="w-full aspect-video object-cover"
+              loading="lazy"
+            />
+            <h1 class="text-2xl font-bold my-2">Custom Software Development</h1>
+            <p>
+              Tailored software solutions designed to meet your specific
+              business needs.
+            </p>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <img
+              src="./assets/img/service2.jpg"
+              alt="service2"
+              class="w-full aspect-video object-cover"
+              loading="lazy"
+            />
+            <h1 class="text-2xl font-bold my-2">Web Application Development</h1>
+            <p>
+              Developing responsive web applications with interactive user
+              interfaces.
+            </p>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <img
+              src="./assets/img/service3.jpg"
+              alt="service3"
+              class="w-full aspect-video object-cover"
+              loading="lazy"
+            />
+            <h1 class="text-2xl font-bold my-2">Mobile App Development</h1>
+            <p>
+              Creating native and cross-platform mobile applications for iOS and
+              Android.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="text-darkColor bg-lightColor min-h-fit">
+      <div class="container mx-auto px-8 py-4 md:py-12">
+        <h1 class="text-2xl md:text-4xl font-bold mb-4 text-center">
+          See Our Lastest Projects
+        </h1>
+        <div class="grid grid-cols-12 gap-6">
+          <div
+            class="col-span-12 md:col-span-4 bg-center bg-cover *:hover:opacity-100 cursor-pointer"
+            style="background-image: url('./assets/img/project1.jpg')"
+          >
+            <div
+              class="h-full flex flex-col justify-center bg-gradient-to-t from-bgColor to-bgColor p-8 opacity-0 text-lightColor ease-linear duration-200"
+            >
+              <h1 class="text-2xl font-bold my-2">Customized CRM System</h1>
+              <p class="mb-4">
+                Developed tailored CRM solution for efficient client management
+                and data organization.
+              </p>
+              <a
+                href=""
+                class="px-8 py-2 w-fit border bg-transparent border-lightColor rounded-lg hover:bg-lightColor hover:text-darkColor ease-linear duration-200"
+                >More Info</a
+              >
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="grid grid-cols-12">
+              <div
+                class="col-span-12 bg-center bg-cover text-lightColor min-h-1/2 *:hover:opacity-100 cursor-pointer"
+                style="background-image: url('./assets/img/project2.jpg')"
+              >
+                <div
+                  class="p-8 bg-gradient-to-t from-bgColor2 to-bgColor2 flex flex-col justify-center opacity-0 ease-linear duration-200"
+                >
+                  <h1 class="text-2xl font-bold my-2">
+                    Data Analytics Software
+                  </h1>
+                  <p class="mb-4">
+                    Crafted an advanced analytics tool for data-driven insights
+                    and informed decision-making.
+                  </p>
+                  <a
+                    href=""
+                    class="px-8 py-2 w-fit border bg-transparent border-lightColor rounded-lg hover:bg-lightColor hover:text-darkColor ease-linear duration-200"
+                    >More Info</a
+                  >
+                </div>
+              </div>
+              <div
+                class="col-span-12 bg-center bg-cover text-lightColor min-h-1/2 mt-4 *:hover:opacity-100 cursor-pointer"
+                style="background-image: url('./assets/img/project3.jpg')"
+              >
+                <div
+                  class="p-8 bg-gradient-to-t from-bgColor to-bgColor flex flex-col justify-center opacity-0 ease-linear duration-200"
+                >
+                  <h1 class="text-2xl font-bold my-2">
+                    Mobile App Development
+                  </h1>
+                  <p class="mb-4">
+                    Created user-friendly mobile applications to enhance
+                    customer engagement and brand visibility.
+                  </p>
+                  <a
+                    href=""
+                    class="px-8 py-2 w-fit border bg-transparent border-lightColor rounded-lg hover:bg-lightColor hover:text-darkColor ease-linear duration-200"
+                    >More Info</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 md:col-span-4 bg-center bg-cover *:hover:opacity-100 cursor-pointer"
+            style="background-image: url('./assets/img/project4.jpg')"
+          >
+            <div
+              class="h-full flex flex-col justify-center bg-gradient-to-t from-bgColor3 to-bgColor3 p-8 opacity-0 text-lightColor ease-linear duration-200"
+            >
+              <h1 class="text-2xl font-bold my-2">
+                E-Commerce Platform Development
+              </h1>
+              <p class="mb-4">
+                Built a feature-rich e-commerce platform for seamless online
+                shopping experiences.
+              </p>
+              <a
+                href=""
+                class="px-8 py-2 w-fit border bg-transparent border-lightColor rounded-lg hover:bg-lightColor hover:text-darkColor ease-linear duration-200"
+                >More Info</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-darkColor text-lightColor">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-12 px-8 py-4 md:py-8 gap-4">
+          <div
+            class="col-span-12 md:col-span-6 flex flex-col md:justify-center"
+          >
+            <h1 class="text-2xl md:text-4xl">Get In Touch</h1>
+            <p class="mt-4">
+              Reach out to us using the contact form below. We look forward to
+              hearing from you and assisting you with your software development
+              needs.
+            </p>
+          </div>
+          <div class="col-span-12 md:col-span-6">
+            <form class="grid grid-cols-12 md:gap-4 ms-0 md:ms-0">
+              <div class="input-grup col-span-12 md:col-span-6 flex flex-col gap-2 mb-2 md:mb-0">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  class="px-4 py-2 rounded bg-darkColor2 border border-lightColor placeholder-lightColor/50 outline-0"
+                  placeholder="Jhon Doe"
+                  id="name"
+                  name="name"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="input-grup col-span-12 md:col-span-6 flex flex-col gap-2">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="px-4 py-2 rounded bg-darkColor2 border border-lightColor placeholder-lightColor/50 outline-0"
+                  placeholder="example@mail.com"
+                  id="email"
+                  name="email"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <div class="input-grup col-span-12 flex flex-col gap-2 mt-2 md:mt-0">
+                <label for="teks-area">Message</label>
+                <textarea name="teks-area" id="teks-area" cols="20" rows="5" class="px-4 py-2 rounded bg-darkColor2 border border-lightColor placeholder-lightColor/50 outline-0" placeholder="Your Message"></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-lightColor bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/img/footerbg.jpg')">
+      <div class="bg-bgColor/85">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-12 px-8 py-4 md:py-8">
+              <div class="col-span-12 md:col-span-6 lg:col-span-3">
+                <a href="" class="text-2xl font-bold">Rahyu Code</a>
+                <p class="mt-2 md:pr-4">Are you looking for top-notch software development services in Padang, Indonesia?   Rahyu Code is your go-to partner for all your software development needs.</p>
+              </div>
+              <div class="col-span-12 md:col-span-6 lg:col-span-3 mt-4 md:mt-0 md:pl-4">
+                <h1 class="font-semibold text-lg">Navigation</h1>
+                <div class="flex flex-col gap-2 mt-2 text-blueColor">
+                  <a href="#home">Home</a>
+                  <a href="#about">About</a>
+                  <a href="#services">Services</a>
+                  <a href="#projects">Projects</a>
+                </div>
+              </div>
+              <div class="col-span-12 md:col-span-6 lg:col-span-3 mt-6 lg:mt-0">
+                <h1 class="font-semibold text-lg">Contact</h1>
+                <div class="flex flex-col gap-3 mt-2">
+                  <a href="" class="flex gap-2">
+                    <img src="./assets/img/icon/email.svg" alt="email" class="w-4 object-center">
+                    <span>example@mail.com</span>
+                  </a>
+                  <a href="" class="flex gap-2">
+                    <img src="./assets/img/icon/website.svg" alt="website" class="w-4 object-center">
+                    <span>example.com</span>
+                  </a>
+                  <a href="https://github.com/fajarrp11" class="flex gap-2">
+                    <img src="./assets/img/icon/github.svg" alt="github" class="w-4 object-center">
+                    <span>github.com/FajarRp11</span>
+                  </a>
+                  <a href="https://github.com/fajarrp11" class="flex gap-2">
+                    <img src="./assets/img/icon/instagram.svg" alt="instagram" class="w-4 object-center">
+                    <span>instagram.com/rahyu_code</span>
+                  </a>
+                </div>
+              </div>
+              <div class="hidden mt-6 pl-4 md:block md:col-span-6 lg:col-span-3 lg:pl-0 lg:mt-0">
+                <p>Rahyu Code is exceptional! The team's expertise and professionalism are truly impressive. Thank you for the outstanding work and exceptional customer service. I highly recommend Rahyu Code for anyone in need of software development solutions.</p>
+                <p class="mt-2">- John Doe</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
