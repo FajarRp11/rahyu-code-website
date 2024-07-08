@@ -587,18 +587,6 @@ html {
   position: fixed;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.inset-0 {
-  inset: 0px;
-}
-
 .left-0 {
   left: 0px;
 }
@@ -698,10 +686,6 @@ html {
   height: 100%;
 }
 
-.max-h-screen {
-  max-height: 100vh;
-}
-
 .min-h-fit {
   min-height: -moz-fit-content;
   min-height: fit-content;
@@ -786,10 +770,6 @@ html {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .scroll-smooth {
@@ -919,11 +899,6 @@ html {
 .object-center {
   -o-object-position: center;
      object-position: center;
-}
-
-.object-right {
-  -o-object-position: right;
-     object-position: right;
 }
 
 .p-8 {
@@ -1146,9 +1121,9 @@ html {
     gap: 1rem;
   }
 
-  .md\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .md\:py-12 {
@@ -1166,29 +1141,16 @@ html {
     padding-bottom: 2rem;
   }
 
-  .md\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .md\:pl-4 {
     padding-left: 1rem;
   }
 
-  .md\:pr-4 {
-    padding-right: 1rem;
-  }
-
-  .md\:pr-8 {
-    padding-right: 2rem;
-  }
-
-  .md\:ps-4 {
-    padding-inline-start: 1rem;
-  }
-
   .md\:pl-8 {
     padding-left: 2rem;
+  }
+
+  .md\:pr-4 {
+    padding-right: 1rem;
   }
 
   .md\:text-center {
